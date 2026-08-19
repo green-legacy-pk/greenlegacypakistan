@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Green Legacy Pakistan (GLP) — a non-political plantation movement working for a greener Pakistan.">
+<title>Green Legacy Pakistan | GLP</title>
+<style>
+:root{--green:#126b2d;--light:#f4fbf5;--dark:#12351d;--accent:#66b82f;--white:#fff;--muted:#64706a}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff;line-height:1.6}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);box-shadow:0 2px 14px rgba(0,0,0,.08)}
+.nav{max-width:1180px;margin:auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--green);text-decoration:none}
+.brand img{width:52px;height:52px;object-fit:contain}
+.brand span{font-size:18px}
+nav{display:flex;align-items:center;gap:18px}
+nav a{color:var(--dark);text-decoration:none;font-weight:700;font-size:14px}
+nav a:hover{color:var(--green)}
+.lang{border:1px solid #c9ddcd;background:#fff;border-radius:20px;padding:7px 12px;font-weight:700;color:var(--green);cursor:pointer}
+.menu{display:none;border:0;background:none;font-size:27px;color:var(--green)}
+.hero{background:linear-gradient(135deg,#effaf0,#fff);padding:75px 20px 55px}
+.hero-inner{max-width:1180px;margin:auto;text-align:center}
+.hero h1{font-size:clamp(36px,6vw,70px);line-height:1.05;margin:0;color:var(--green)}
+.hero p{max-width:760px;margin:22px auto;color:#4b5b51;font-size:19px}
+.btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:12px 21px;border-radius:28px;font-weight:800}
+.primary{background:var(--green);color:#fff}.secondary{border:2px solid var(--green);color:var(--green)}
+.wrap{max-width:1180px;margin:auto;padding:65px 20px}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:34px;margin:0 0 8px;color:var(--green)}
+.section-title p{margin:0;color:var(--muted)}
+.logo-card{text-align:center;background:#fff;border-radius:22px;padding:20px;box-shadow:0 10px 35px rgba(18,107,45,.10)}
+.logo-card img{width:min(500px,100%);height:auto}
+.post-card{margin-top:30px;text-align:center}
+.post-card img{width:100%;max-width:1100px;border-radius:18px;box-shadow:0 12px 35px rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--light);border:1px solid #dcecdf;border-radius:18px;padding:25px}
+.card h3{color:var(--green);margin-top:0}
+.about{background:var(--light)}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.member{background:#fff;border-radius:16px;padding:20px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,.06)}
+.member strong{display:block;font-size:18px;color:var(--green)}
+.lead{border:2px solid #86c96d}
+.contact{background:#0f4e24;color:#fff}
+.contact .section-title h2,.contact .section-title p{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{background:rgba(255,255,255,.08);border-radius:18px;padding:25px}
+.contact a{color:#fff;text-decoration:none}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.social{border:1px solid rgba(255,255,255,.45);padding:10px 15px;border-radius:22px}
+footer{background:#0a3418;color:#dceadd;text-align:center;padding:22px}
+[dir="rtl"]{font-family:Tahoma,Arial,sans-serif}
+[dir="rtl"] nav{direction:rtl}
+[dir="rtl"] .btns,[dir="rtl"] .socials{direction:rtl}
+@media(max-width:850px){
+ nav{display:none;position:absolute;left:0;right:0;top:72px;background:#fff;padding:18px 20px;flex-direction:column;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+ nav.open{display:flex}.menu{display:block}
+ .grid,.team,.contact-grid{grid-template-columns:1fr}
+ .brand span{font-size:15px}
+}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<a class="brand" href="#home"><img src="assets/glp-logo.png" alt="GLP logo"><span>Green Legacy Pakistan</span></a>
+<button class="menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+<nav id="nav">
+<a href="#home" data-en="Home" data-ur="ہوم">Home</a>
+<a href="#about" data-en="About" data-ur="تعارف">About</a>
+<a href="#mission" data-en="Mission" data-ur="مقصد">Mission</a>
+<a href="#team" data-en="Team" data-ur="ٹیم">Team</a>
+<a href="#contact" data-en="Contact" data-ur="رابطہ">Contact</a>
+<button class="lang" onclick="toggleLanguage()" id="langBtn">اردو</button>
+</nav>
+</div>
+</header>
+
+<main id="home">
+<section class="hero">
+<div class="hero-inner">
+<h1 data-en="Green Legacy Pakistan" data-ur="گرین لیگیسی پاکستان">Green Legacy Pakistan</h1>
+<p data-en="A non-political plantation movement committed to creating a greener, cleaner and stronger Pakistan."
+data-ur="ایک غیر سیاسی شجرکاری کی تحریک جو ایک سرسبز، صاف اور مضبوط پاکستان کے قیام کے لیے کام کر رہی ہے۔">A non-political plantation movement committed to creating a greener, cleaner and stronger Pakistan.</p>
+<div class="btns">
+<a class="btn primary" href="#mission" data-en="Our Mission" data-ur="ہمارا مقصد">Our Mission</a>
+<a class="btn secondary" href="#contact" data-en="Get in Touch" data-ur="رابطہ کریں">Get in Touch</a>
+</div>
+</div>
+</section>
+
+<section class="wrap">
+<div class="logo-card"><img src="assets/glp-logo.png" alt="Green Life Planet logo"></div>
+<div class="post-card"><img src="assets/plantation-post.jpg" alt="GLP plantation post"></div>
+</section>
+
+<section class="about" id="about">
+<div class="wrap">
+<div class="section-title"><h2 data-en="About the Organization" data-ur="تنظیم کا تعارف">About the Organization</h2>
+<p data-en="Building a greener legacy through action." data-ur="عمل کے ذریعے ایک سرسبز ورثہ قائم کرنا۔">Building a greener legacy through action.</p></div>
+<div class="grid">
+<div class="card"><h3>GLP</h3><p data-en="Green Legacy Pakistan is a non-political organization focused on plantation and environmental improvement."
+data-ur="گرین لیگیسی پاکستان ایک غیر سیاسی تنظیم ہے جو شجرکاری اور ماحولیاتی بہتری پر توجہ مرکوز کرتی ہے۔">Green Legacy Pakistan is a non-political organization focused on plantation and environmental improvement.</p></div>
+<div class="card"><h3 data-en="Founder" data-ur="بانی">Founder</h3><p><strong>Atif Shah</strong></p></div>
+<div class="card"><h3 data-en="Founding Support" data-ur="ابتدائی ساتھی">Founding Support</h3><p>Kawish · Bilawal · Bilal · Fahad · Sheryar · Kashan · Syed Obaid · Syed Taha</p></div>
+</div>
+</div>
+</section>
+
+<section class="wrap" id="mission">
+<div class="section-title"><h2 data-en="Our Mission" data-ur="ہمارا مقصد">Our Mission</h2>
+<p data-en="Plant today for a better tomorrow." data-ur="آج پودا لگائیں، بہتر کل بنائیں۔">Plant today for a better tomorrow.</p></div>
+<div class="grid">
+<div class="card"><h3 data-en="Plantation" data-ur="شجرکاری">Plantation</h3><p data-en="Our core work is plantation and increasing green spaces."
+data-ur="ہمارا بنیادی کام شجرکاری اور سرسبز علاقوں میں اضافہ کرنا ہے۔">Our core work is plantation and increasing green spaces.</p></div>
+<div class="card"><h3 data-en="Environmental Care" data-ur="ماحولیاتی نگہداشت">Environmental Care</h3><p data-en="We encourage responsible care of plants and a stronger connection with nature."
+data-ur="ہم پودوں کی ذمہ دارانہ نگہداشت اور فطرت سے مضبوط تعلق کو فروغ دیتے ہیں۔">We encourage responsible care of plants and a stronger connection with nature.</p></div>
+<div class="card"><h3 data-en="Our Beginning" data-ur="آغاز">Our Beginning</h3><p data-en="The plantation campaign began in the first week of September."
+data-ur="شجرکاری مہم کا آغاز ستمبر کے پہلے ہفتے میں کیا گیا۔">The plantation campaign began in the first week of September.</p></div>
+</div>
+</section>
+
+<section class="about" id="team">
+<div class="wrap">
+<div class="section-title"><h2 data-en="Our Team" data-ur="ہماری ٹیم">Our Team</h2><p data-en="The people behind the Green Legacy." data-ur="گرین لیگیسی کے پیچھے موجود ٹیم۔">The people behind the Green Legacy.</p></div>
+<div class="team">
+<div class="member lead"><strong>Atif Shah</strong><span data-en="Team Lead" data-ur="ٹیم لیڈ">Team Lead</span></div>
+<div class="member"><strong>Kawish</strong></div>
+<div class="member"><strong>Bilawal</strong></div>
+<div class="member"><strong>Bilal</strong></div>
+<div class="member"><strong>Fahad</strong></div>
+<div class="member"><strong>Sheryar</strong></div>
+<div class="member"><strong>Kashan</strong></div>
+<div class="member"><strong>Syed Obaid</strong></div>
+<div class="member"><strong>Syed Taha</strong></div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="section-title"><h2 data-en="Contact Us" data-ur="ہم سے رابطہ کریں">Contact Us</h2><p data-en="Connect with Green Legacy Pakistan." data-ur="گرین لیگیسی پاکستان سے رابطہ کریں۔">Connect with Green Legacy Pakistan.</p></div>
+<div class="contact-grid">
+<div class="contact-box"><h3 data-en="Phone" data-ur="فون">Phone</h3>
+<p><a href="tel:+923462597858">+92 346 2597858</a></p>
+<p><a href="tel:+923306539854">+92 330 6539854</a></p>
+<p><a href="tel:+923102040815">+92 310 2040815</a></p>
+<p><a href="tel:+923147489425">+92 314 7489425</a></p></div>
+<div class="contact-box"><h3 data-en="Social Media" data-ur="سوشل میڈیا">Social Media</h3>
+<div class="socials">
+<a class="social" href="https://www.instagram.com/greenlegacypakistan" target="_blank" rel="noopener">Instagram</a>
+<a class="social" href="https://www.tiktok.com/@glp.official5" target="_blank" rel="noopener">TikTok</a>
+<a class="social" href="https://www.facebook.com/share/1HAwawAXBo/" target="_blank" rel="noopener">Facebook</a>
+</div></div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> Green Legacy Pakistan (GLP) — Plant Today for a Better Tomorrow.</footer>
+<script>
+let urdu=false;
+function toggleMenu(){document.getElementById('nav').classList.toggle('open')}
+function toggleLanguage(){
+ urdu=!urdu;
+ document.documentElement.lang=urdu?'ur':'en';
+ document.documentElement.dir=urdu?'rtl':'ltr';
+ document.querySelectorAll('[data-en]').forEach(el=>el.textContent=urdu?el.dataset.ur:el.dataset.en);
+ document.getElementById('langBtn').textContent=urdu?'English':'اردو';
+}
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
